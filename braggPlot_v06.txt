@@ -1,0 +1,45 @@
+
+---- Modify Plot_v05 and organize source files in packages ----
+
+***
+Create 4 directories
+- AnalysisFramework
+- AnalysisUtilities
+- AnalysisObjects
+- AnalysisPlugins
+
+***
+Move all the source files to those directories:
+- to AnalysisFramework:
+  main.cc
+  AnalysisInfo.h,cc
+  Event.h,cc
+  EventSource.h,cc
+  EventReadFromFile.h,cc
+  EventSim.h,cc
+  SourceFactory.h,cc
+  AnalysisSteering.h,cc
+  AnalysisFactory.h,cc
+- to AnalysisUtilities:
+  Constants.h,cc
+- to AnalysisObjects:
+  BraggStatistic.h,cc
+  TotalEnergy.h,cc
+- to AnalysisPlugins:
+  EventDump.h,cc
+  EnergyDist.h,cc
+  BGCalc.h,cc
+  
+***
+Compile the code in AnalysisFramework, AnalysisUtilities, AnalysisObjects
+and produce a dynamic library for each package.
+Modify the "particleReco_v06/compile" script changing the names where needed.
+
+***
+Compile the code in AnalysisPlugins and produce a dynamic library for 
+each class.
+
+***
+Create a dummy source file and compile it linking all the libraries
+to produce an executable.
+
